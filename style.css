@@ -1,0 +1,185 @@
+/*
+BLOQUE RESET Y ESTILOS BASE
+*/
+
+/*Reset básico para eliminar márgenes y paddings por defecto*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos base para el body*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* BLOQUE: NAVEGACIÓN (BLOQUE PRINCIPAL)
+Metodología BEM: bloque "nav"
+*/
+
+.nav{
+    background-color: #2c3e50;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*BLOQUE: CONTENEDOR NAV
+Metodología BEM: Elemento "nav__container"
+*/
+
+.nav__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*BLOQUE: LOGOTIPO
+Metodología BEM: Elemento "nav__logo"
+*/
+
+.nav__logo{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*BLOQUE: MENÚ HAMBURGUESA (MOBILE-FIRST)
+Metodología BEM: Elemento "nav__toggle*/
+
+.nav__toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+/*Líneas del manú hamburguesa*/
+
+.nav__toggle-line {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    margin: 5px 0;
+    transition: all o.3 ease;
+}
+
+/*BLOQUE: LISTA DE NAVEGACIÓN (OCULTA EN MOBILE)
+Metodología BEM: Elemento "nav__menú*/
+
+.nav__menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    transform: translateY(-100%);
+    transition: transform 0.3 ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*BLOQUE: ELEMENTOS DEL MENÚ
+Metodología BEM: Elemento "nav__item"*/
+
+.nav__item {
+    list-style: none;
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* BLOQUE: ENLACES DEL MENÚ
+Metodología BEM: Elemento "nav__link*/
+
+.nan__link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3 ease;
+}
+
+.nav__link:hover {
+    background-color: #34495e;
+}
+
+/*BLOQUE: ESTADO ACTIVO DEL MENÚ
+Metodología BEM: Modificador "nav-menú--active*/
+
+.nav__toggle-line--top-active {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav__toggle-line--middle-active {
+    opacity: 0;
+}
+
+.nav__toggle-line--bottom-active {
+    transform: rotate(-45deg) translate(7px, -6px);
+} 
+
+/*BLOQUE: CONTENIDO PRINCIPAL
+Para demostrar el scroll con menú fijo*/
+
+.main-content {
+    margin-top: 80px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*BLOQE: MEDIA QUERIES (VERSIÓN ESCRITORIO)
+Breakpoint para pantallas más grandes*/
+
+@media (min-width: 768px) {
+    /*Ocultar el botón hamburguesa en desktop*/
+    .nav__toggle {
+        display: none;
+    }
+
+    /*Mostrar el menú en horizontal*/
+    .nav__menu {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
+        width: auto;
+    }
+
+    /*Ajustar espaciado de elementos en desktop*/
+    .nav__item{
+        margin: 0 0.5rem;
+        width: auto;
+    }
+
+    /*Akjustar enlaces para desktop*/
+    .nav__link {
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+    }
+}
