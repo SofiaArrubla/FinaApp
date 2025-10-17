@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Hamburguesa</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav__container">
+        <!--Logo-->
+        <a href="#" class="nav__logo">Misitio</a>
+
+        <!--Boton Hamburguesa-->
+        <button class="nav__toggle" id="navToggle">
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+        </button>
+
+        <!--menu de navegacion-->
+        <ul class="nav__menu" id="navMenu">
+          <li class="nav__item">
+            <a href="#" class="nav__link">Inicio</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Servicios</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Contacto</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--Contenido principal para demostrar scroll-->
+    <main class="main-content">
+      <h1>Contenido principal</h1>
+      <p>
+        Este es un ejemplo de memú de navegacion responsive con metodologia
+        mobile-firts y BEM
+      </p>
+      <p>
+        En dispositivos móviles, el menú se oculto y se muestra mediante un
+        botón Hamburguesa
+      </p>
+      <p>
+        En pantalla más grande (768px o más), el menú se muestra em formato
+        horizontal.
+      </p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
